@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Symlink to 
+
+# Install Vundle first
+# mkdir vim/bundle
+# git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Install Vundle plugins
+vim +PluginInstall +qall
+
