@@ -2,6 +2,9 @@
 
 ## Todo
 
+- EasyMotion vs Sneak
+- My own snippets (e.g. Django, etc)
+- Status line
 - Buffers over Tabs
 - Colorscheme
 - Wrapping

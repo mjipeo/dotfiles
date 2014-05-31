@@ -20,9 +20,14 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'msanders/snipmate.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-repeat'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'justinmk/vim-sneak'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'majutsushi/tagbar'
 
 Plugin 'ap/vim-css-color'
 Plugin 'groenewege/vim-less'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -33,6 +38,7 @@ filetype plugin indent on
 
 " Basic
 syntax enable
+
 
 set ruler
 set expandtab
@@ -61,7 +67,7 @@ set wildmode=list:longest
 set laststatus=2
 set visualbell
 set number
-set relativenumber
+"set relativenumber
 set undofile
 set ignorecase
 set smartcase
@@ -76,7 +82,7 @@ let mapleader=","
 noremap <F1> <ESC>
 nnoremap j gj
 nnoremap k gk
-nnoremap ; :
+"nnoremap ; :
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <tab> %
@@ -87,9 +93,21 @@ inoremap jj <ESC>
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Plugin-specific
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 "let g:vim_markdown_initial_foldlevel=1
 let g:vim_markdown_folding_disabled=1
+"let g:sneak#streak=1
+
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+map <SPACE> <Plug>(easymotion-s2)
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+"map  N <Plug>(easymotion-prev)
+
+
+set scrolloff=1
 
 cabbrev ht tab help
 cabbrev hv vert help
