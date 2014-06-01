@@ -22,7 +22,7 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'justinmk/vim-sneak'
-Plugin 'myusuf3/numbers.vim'
+"Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-airline'
@@ -79,12 +79,12 @@ set wrap
 set pastetoggle=<F2>
 set encoding=utf-8
 set showcmd
-"set hidden " Controversial
+set hidden " Controversial
 set wildmenu
 set wildmode=list:longest
 set visualbell
 set number
-"set relativenumber
+set relativenumber
 set undofile
 set ignorecase
 set smartcase
@@ -215,10 +215,13 @@ vmap <Leader>t, :Tabularize /,<CR>
 " let g:indent_guides_auto_colors = 0
 autocmd filetype python,javascript,html :IndentGuidesEnable
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=234
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=none ctermbg=235
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 " Jedi
 let g:jedi#use_tabs_not_buffers = 0
@@ -349,6 +352,11 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+"""""""" some helpful abbreviations
+iab <expr> dts strftime("%m/%d/%y")
+iab <expr> ymd strftime("%Y-%m-%d")
+iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 
 " Sample for file-specific settings
 " autocmd filetype python set expandtab

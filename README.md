@@ -7,19 +7,25 @@
 
 ## Todo
 
+- Clean up and organize the vimrc file (possibly into multiple files)
+- Python-mode
 - Summarize all the custom key mappings in one place
 - Syntastic custom checker (e.g. Pylint)
 - My own snippets (e.g. Django, etc)
 - EasyMotion vs Sneak
-- Status line
+- File manupilation in NERDTree
 - Buffers over Tabs
-- Colorscheme
+  (http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs)
+  (http://vim.wikia.com/wiki/Easier_buffer_switching#Scripts)
 - Wrapping
+  (http://blog.ezyang.com/2010/03/vim-textwidth/)
 - Folding
 - Lint libraries for Syntastic
 - Custom surround mappings
 - CtrlP ignore configuration
 - Jedi best practice and key mappings (e.g. Supertab)
+- Tmux and vimux
+  (http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits)
 - Custom key mapping for plugins
 
 ## Tips
