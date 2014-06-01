@@ -16,23 +16,28 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'rstacruz/sparkup'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'msanders/snipmate.vim'
-Plugin 'mileszs/ack.vim'
+"Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'justinmk/vim-sneak'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'pangloss/vim-javascript'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'ervandew/supertab'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'ap/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
-
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,6 +49,14 @@ filetype plugin indent on
 " Basic
 syntax enable
 
+" Colorscheme
+"set t_Co=256
+"set t_Co=16
+"let g:solarized_termcolors=16
+let g:solarized_termcolors=256
+"let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
 
 set ruler
 set expandtab
@@ -120,11 +133,13 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap <tab> %
 vnoremap <tab> %
-nnoremap <CR> :nohlsearch<CR>
-inoremap jj <ESC>
+"nnoremap <CR> :nohlsearch<CR>
+nnoremap <leader><space> :nohlsearch<CR>
+"inoremap jj <ESC>
 
 " Plugin-specific
-nnoremap <leader>a :Ack 
+nnoremap <leader>aa :Ag 
+nnoremap <leader>as :Ag <cfile><CR>
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
@@ -143,11 +158,15 @@ nnoremap <leader>tt :TagbarToggle<CR>
 let g:snips_author = 'Minjong Chung<mjipeo@gmail.com>'
 
 let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='bubblegum'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " Nerdtree
-map <C-e> <plug>NERDTreeTabsToggle<CR>
-map <leader>e :NERDTreeFind<CR>
+"map <C-e> <plug>NERDTreeTabsToggle<CR>
+"map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
+nmap <leader>nn :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 let NERDTreeChDirMode=0
@@ -156,8 +175,6 @@ let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
-
-" ctrlp
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -174,9 +191,71 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " Ctrlp
+set wildignore+=*.so,*.swp,*.zip,*.pyc
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  "\ 'file': '\v\.(exe|so|dll)$',
+  "\ 'link': 'some_bad_symbolic_links',
+  "\ }
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.so$\|\.pyc$' }
+"let g:ctrlp_map = '<leader>c'
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+"Tabular
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:<CR>
+vmap <Leader>t: :Tabularize /:<CR>
+nmap <Leader>t, :Tabularize /,<CR>
+vmap <Leader>t, :Tabularize /,<CR>
+
+"Indent-guides
+" let g:indent_guides_auto_colors = 0
+autocmd filetype python,javascript,html :IndentGuidesEnable
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=none ctermbg=235
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+" Jedi
+let g:jedi#use_tabs_not_buffers = 0
+"let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>jg"
+let g:jedi#goto_definitions_command = "<leader>jd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>jn"
+let g:jedi#rename_command = "<leader>jr"
+"let g:jedi#completions_command = "<C-Space>"
+let g:jedi#completions_command = "<C-k>"
+let g:jedi#show_call_signatures = "1"
+
+" Surround
+"let b:surround_{char2nr("v")} = "{{ \r }}"
+"let b:surround_{char2nr("{")} = "{{ \r }}"
+"let b:surround_{char2nr("%")} = "{% \r %}"
+"let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
+"let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
+"let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
+"let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
+"let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
+
+" Syntastic
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=0
+let g:syntastic_auto_jump=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_error_symbol = 'e'
+let g:syntastic_warning_symbol = 'w'
+"let g:syntastic_csslint_options = "--ignore=ids"
+nnoremap <leader>sr :SyntasticReset<CR>
+nnoremap <leader>sc :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+" Signify
+let g:signify_vcs_list = ['git']
 
 """""""""""
 """""""""""
@@ -185,13 +264,6 @@ set scrolloff=3
 
 cabbrev ht tab help
 cabbrev hv vert help
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linu
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
 
 " Quickly edit/reload the vimrc file
 nnoremap <leader>rv :vs $MYVIMRC<CR>
@@ -245,6 +317,9 @@ nmap <leader>f9 :set foldlevel=9<CR>
 
 vnoremap < <gv
 vnoremap > >gv
+
+noremap H ^
+noremap L g_
 
 cmap w!! w !sudo tee % >/dev/null
 map <Leader>= <C-w>=
