@@ -7,6 +7,8 @@
 
 ## Todo
 
+### Vim
+
 - Clean up and organize the vimrc file (possibly into multiple files)
 - Python-mode
 - Summarize all the custom key mappings in one place
@@ -19,6 +21,8 @@
   (http://vim.wikia.com/wiki/Easier_buffer_switching#Scripts)
 - Wrapping
   (http://blog.ezyang.com/2010/03/vim-textwidth/)
+  (http://vimcasts.org/episodes/soft-wrapping-text/)
+  (http://vimcasts.org/episodes/hard-wrapping-text/)
 - Folding
 - Lint libraries for Syntastic
 - Custom surround mappings
@@ -27,6 +31,21 @@
 - Tmux and vimux
   (http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits)
 - Custom key mapping for plugins
+- More from others' rcs
+- Tips
+  (http://vim.wikia.com/wiki/Best_Vim_Tips)
+  (http://rayninfo.co.uk/vimtips.html)
+
+### Dotfiles
+
+- zsh (e.g. oh-my-zsh)
+- bash completion (if needed)
+- gitconfig
+- program-specific setings (e.g. .arignore)
+- bootstrap script
+- custom functions & executables
+  (https://github.com/rtomayko/dotfiles/tree/rtomayko/bin)
+
 
 ## Tips
 
