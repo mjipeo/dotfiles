@@ -16,6 +16,7 @@
 - My own snippets (e.g. Django, etc)
 - EasyMotion vs Sneak
 - File manupilation in NERDTree
+- Custom git key bindings (e.g. checkout, branch, merge)
 - Buffers over Tabs
   (http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs)
   (http://vim.wikia.com/wiki/Easier_buffer_switching#Scripts)
@@ -30,11 +31,11 @@
 - Jedi best practice and key mappings (e.g. Supertab)
 - Tmux and vimux
   (http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits)
-- Custom key mapping for plugins
 - More from others' rcs
 - Tips
   (http://vim.wikia.com/wiki/Best_Vim_Tips)
   (http://rayninfo.co.uk/vimtips.html)
+- Custom key mapping for plugins
 
 ### Dotfiles
 
