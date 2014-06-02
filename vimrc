@@ -24,7 +24,6 @@ Plugin 'justinmk/vim-sneak'
 "Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -155,12 +154,32 @@ map <SPACE> <Plug>(easymotion-s2)
 "map  n <Plug>(easymotion-next)
 "map  N <Plug>(easymotion-prev)
 nnoremap <leader>tt :TagbarToggle<CR>
+
+" Snipmate
 let g:snips_author = 'Minjong Chung<mjipeo@gmail.com>'
 
+" Airline
+Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='bubblegum'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+"let g:airline_theme='bubblegum'
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_powerline_fonts=1
 
 " Nerdtree
 "map <C-e> <plug>NERDTreeTabsToggle<CR>

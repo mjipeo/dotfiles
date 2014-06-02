@@ -4,6 +4,9 @@
 
 - Ag
 - Exuberant ctags for Tagbar
+- Patched fonts for powerline symbols in vim-airline
+  (https://github.com/Lokaltog/powerline-fonts)
+
 
 ## Todo
 
