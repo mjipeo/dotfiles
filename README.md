@@ -12,6 +12,10 @@
 
 ### Vim
 
+- Textobjects
+  (https://github.com/skwp/dotfiles/blob/master/doc/vim/textobjects.md)
+- Finalze the key mapping for Tagbar and CtrlP
+- Might need easier mapping for Ag as well
 - Clean up and organize the vimrc file (possibly into multiple files)
 - Python-mode
 - Summarize all the custom key mappings in one place
@@ -32,9 +36,11 @@
 - Custom surround mappings
 - CtrlP ignore configuration
 - Jedi best practice and key mappings (e.g. Supertab)
+- Try other completion libraries as well (e.g. Necomplcache)
 - Tmux and vimux
   (http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits)
 - More from others' rcs
+  (https://github.com/skwp/dotfiles)
 - Tips
   (http://vim.wikia.com/wiki/Best_Vim_Tips)
   (http://rayninfo.co.uk/vimtips.html)

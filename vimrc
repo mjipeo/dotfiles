@@ -9,6 +9,7 @@ call vundle#begin()
 
 " Plugins
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
@@ -30,6 +31,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'sjl/gundo.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
@@ -37,6 +39,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Raimondi/delimitMate'
+Plugin 'vim-scripts/matchit.zip'
 
 call vundle#end()
 filetype plugin indent on
@@ -53,7 +57,7 @@ syntax enable
 "set t_Co=16
 "let g:solarized_termcolors=16
 let g:solarized_termcolors=256
-"let g:solarized_termtrans = 1
+"let g:solarized_termtrans = 0
 set background=dark
 colorscheme solarized
 
@@ -130,8 +134,8 @@ noremap <F1> <ESC>
 nnoremap Y y$
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <tab> %
-vnoremap <tab> %
+nmap <tab> %
+vmap <tab> %
 "nnoremap <CR> :nohlsearch<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 "inoremap jj <ESC>
@@ -153,6 +157,11 @@ map <SPACE> <Plug>(easymotion-s2)
 "omap / <Plug>(easymotion-tn)
 "map  n <Plug>(easymotion-next)
 "map  N <Plug>(easymotion-prev)
+
+" Sneak
+let g:sneak#use_ic_scs = 1
+
+" Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
 
 " Snipmate
@@ -219,7 +228,7 @@ set wildignore+=*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.so$\|\.pyc$' }
-"let g:ctrlp_map = '<leader>c'
+"let g:ctrlp_map = '<leader>f'
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 "Tabular
@@ -279,6 +288,12 @@ nnoremap <leader>sc :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 " Signify
 "let g:signify_vcs_list = ['git']
 
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+"""""""""""
+"""""""""""
+"""""""""""
 """""""""""
 """""""""""
 
@@ -291,7 +306,8 @@ cabbrev hv vert help
 nnoremap <leader>rv :vs $MYVIMRC<CR>
 nnoremap <leader>rs :so $MYVIMRC<CR>
 
-vnoremap <C-c> <Esc>
+"vnoremap <C-c> <Esc>
+"inoremap <C-c> <Esc>
 
 " For practicing
 inoremap <Esc> <nop>
@@ -345,7 +361,7 @@ noremap L g_
 
 cmap w!! w !sudo tee % >/dev/null
 map <Leader>= <C-w>=
-nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+"nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif
