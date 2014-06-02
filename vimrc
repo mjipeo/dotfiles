@@ -277,7 +277,8 @@ let g:jedi#show_call_signatures = "1"
 "let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 " Syntastic
-let g:syntastic_auto_loc_list=1
+"let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=0
 let g:syntastic_auto_jump=1
 let g:syntastic_check_on_wq=0
@@ -401,6 +402,8 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 
 " don't use cindent for javascript
 "autocmd FileType javascript setlocal nocindent
+
+autocmd Filetype less,html,htmldjango,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable(".vimrc.local")
