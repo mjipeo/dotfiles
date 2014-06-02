@@ -12,6 +12,13 @@ git clone https://github.com/mjipeo/dotfiles.git .dotfiles
 ln -s .dotfiles/vimrc .vimrc
 ln -s .dotfiles/vim .vim
 
+# Install dependencies
+# TODO: Ag
+#       brew install the_silver_searcher
+#       brew install automake pkg-config  pcre
+# TODO: Exuberant ctags for Tagbar
+#       brew install ctags-exuberant
+
 # Install Vundle first
 git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
 
