@@ -41,6 +41,7 @@
   (http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits)
 - More from others' rcs
   (https://github.com/skwp/dotfiles)
+  (https://github.com/amix/vimrc)
 - Tips
   (http://vim.wikia.com/wiki/Best_Vim_Tips)
   (http://rayninfo.co.uk/vimtips.html)

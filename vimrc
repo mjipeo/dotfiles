@@ -144,7 +144,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Plugin-specific
 nnoremap <leader>aa :Ag 
-nnoremap <leader>as :Ag <cfile><CR>
+nnoremap <leader>as :Ag <cword><CR>
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
