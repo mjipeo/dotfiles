@@ -32,6 +32,8 @@ Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'vim-scripts/matchit.zip'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
@@ -39,8 +41,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vim-scripts/matchit.zip'
+Plugin 'othree/html5.vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -243,7 +245,7 @@ vmap <Leader>t, :Tabularize /,<CR>
 
 "Indent-guides
 " let g:indent_guides_auto_colors = 0
-autocmd filetype python,javascript,html :IndentGuidesEnable
+autocmd filetype python,html,htmldjango,jinja :IndentGuidesEnable
 let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=235
@@ -306,6 +308,7 @@ cabbrev ht tab help
 cabbrev hv vert help
 
 " Quickly edit/reload the vimrc file
+nnoremap <leader>re :e $MYVIMRC<CR>
 nnoremap <leader>rv :vs $MYVIMRC<CR>
 nnoremap <leader>rs :so $MYVIMRC<CR>
 
@@ -403,7 +406,8 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 " don't use cindent for javascript
 "autocmd FileType javascript setlocal nocindent
 
-autocmd Filetype less,html,htmldjango,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.html set filetype=jinja
+autocmd Filetype css,less,html,htmldjango,jinja,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable(".vimrc.local")
