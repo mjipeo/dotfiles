@@ -12,6 +12,7 @@
 
 ### Vim
 
+- set guifonts options for Macvim
 - Textobjects
   (https://github.com/skwp/dotfiles/blob/master/doc/vim/textobjects.md)
 - Finalze the key mapping for Tagbar and CtrlP
