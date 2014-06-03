@@ -12,6 +12,7 @@
 
 ### Vim
 
+- CSS colors for less files as well
 - Textobjects
   (https://github.com/skwp/dotfiles/blob/master/doc/vim/textobjects.md)
 - Finalze the key mapping for Tagbar and CtrlP
