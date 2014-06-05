@@ -10,6 +10,10 @@
 
 ## Todo
 
+### Zshrc
+
+- Take care of OS-dependent aliases and functions (such as vim path)
+
 ### Vim
 
 - set guifonts options for Macvim
