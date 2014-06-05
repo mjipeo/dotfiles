@@ -13,6 +13,7 @@ ln -s .dotfiles/vimrc .vimrc
 ln -s .dotfiles/vim .vim
 
 # Install dependencies
+# TODO: Zsh
 # TODO: Ag
 #       brew install the_silver_searcher
 #       brew install automake pkg-config  pcre
