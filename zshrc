@@ -18,8 +18,8 @@ DEFAULT_USER=`whoami`
 plugins=(git python)
 
 
-# Activating oh-my-zsh
-# --------------------
+# Activate oh-my-zsh
+# ------------------
 
 source $ZSH/oh-my-zsh.sh
 
@@ -27,6 +27,12 @@ source $ZSH/oh-my-zsh.sh
 # Post oh-my-zsh
 # --------------
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin"
+export PATH="$HOME/bin:$PATH"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+
+
+# Load local config if any
+# ------------------------
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

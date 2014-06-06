@@ -1,7 +1,14 @@
 # Basics
 # ------
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+case `uname` in
+    Darwin)
+        alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+        ;;
+    Linux)
+        ;;
+esac
+
 alias vi='vim'
 alias v='vim'
 
@@ -9,15 +16,8 @@ alias v='vim'
 # Virtualenv
 # ----------
 
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-
-
-# SSH
-# ---
-
-alias dev='ssh mj.chung@dev.dnco.corp'
-alias rookie='ssh mj.chung@192.168.11.11'
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+source `which virtualenvwrapper.sh`
 

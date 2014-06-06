@@ -54,12 +54,12 @@ filetype plugin indent on
 " Basic
 syntax enable
 
+if has("gui_running")
+    set guifont=Liberation\ Mono\ for\ Powerline:h14
+endif
+
 " Colorscheme
-"set t_Co=256
-"set t_Co=16
-"let g:solarized_termcolors=16
 let g:solarized_termcolors=256
-"let g:solarized_termtrans = 0
 set background=dark
 colorscheme solarized
 

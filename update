@@ -2,5 +2,6 @@
 
 cd ~/.dotfiles
 git pull
+
 vim +PluginInstall +qall
 
