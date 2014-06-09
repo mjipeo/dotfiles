@@ -47,6 +47,7 @@
 - More from others' rcs
   (https://github.com/skwp/dotfiles)
   (https://github.com/amix/vimrc)
+  (https://github.com/carlhuda/janus)
 - Tips
   (http://vim.wikia.com/wiki/Best_Vim_Tips)
   (http://rayninfo.co.uk/vimtips.html)
