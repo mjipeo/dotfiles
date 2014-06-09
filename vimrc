@@ -34,7 +34,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'SirVer/ultisnips'
-Plugin 'mjipeo/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
