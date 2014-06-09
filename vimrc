@@ -1,8 +1,7 @@
 set nocompatible
 
 
-" Vundle
-filetype off
+" Vundle filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,7 +16,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'rstacruz/sparkup'
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
@@ -34,15 +33,20 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'SirVer/ultisnips'
+Plugin 'mjipeo/vim-snippets'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'ap/vim-css-color'
+"Plugin 'ap/vim-css-color'
+Plugin 'mjipeo/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'othree/html5.vim'
-Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'mitsuhiko/vim-jinja'
+
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -245,7 +249,7 @@ vmap <Leader>t, :Tabularize /,<CR>
 
 "Indent-guides
 " let g:indent_guides_auto_colors = 0
-autocmd filetype python,html,htmldjango,jinja :IndentGuidesEnable
+autocmd filetype python,html,htmldjango,htmljinja :IndentGuidesEnable
 let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=none ctermbg=235
@@ -406,8 +410,8 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 " don't use cindent for javascript
 "autocmd FileType javascript setlocal nocindent
 
-autocmd BufNewFile,BufRead *.html set filetype=jinja
-autocmd Filetype css,less,html,htmldjango,jinja,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.html set filetype=htmljinja
+autocmd Filetype javascript,css,less,html,htmldjango,htmljinja setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable(".vimrc.local")

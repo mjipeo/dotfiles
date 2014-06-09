@@ -12,12 +12,11 @@
 
 ### Zshrc
 
-- Take care of OS-dependent aliases and functions (such as vim path)
-
 ### Vim
 
-- set guifonts options for Macvim
-- CSS colors for less files as well
+- Change `mjipeo/*` repos to original one when properly merged
+- Better completion
+  (https://github.com/Valloric/YouCompleteMe)
 - Textobjects
   (https://github.com/skwp/dotfiles/blob/master/doc/vim/textobjects.md)
 - Finalze the key mapping for Tagbar and CtrlP
