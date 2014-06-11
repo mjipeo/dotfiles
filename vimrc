@@ -237,8 +237,8 @@ nnoremap <silent> <leader>l :TagbarToggle<CR>
 "\ 'file': '\v\.(exe|so|dll)$',
 "\ 'link': 'some_bad_symbolic_links',
 "\ }
-
 let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|\.hg$\|\.svn$',
             \ 'file': '\.so$\|\.pyc$' }
