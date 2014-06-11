@@ -27,7 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
@@ -274,17 +274,17 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " Jedi
-"let g:jedi#use_tabs_not_buffers = 0
-""let g:jedi#use_splits_not_buffers = "right"
-"let g:jedi#popup_on_dot = 0
-"let g:jedi#goto_assignments_command = "<leader>jg"
-"let g:jedi#goto_definitions_command = "<leader>jd"
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>jn"
-"let g:jedi#rename_command = "<leader>jr"
-""let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#completions_command = "<C-k>"
-"let g:jedi#show_call_signatures = "1"
+let g:jedi#use_tabs_not_buffers = 0
+"let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>ja"
+let g:jedi#goto_definitions_command = "<leader>jd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>ju"
+let g:jedi#rename_command = "<leader>jr"
+"let g:jedi#completions_command = "<C-Space>"
+let g:jedi#completions_command = "<C-k>"
+let g:jedi#show_call_signatures = "1"
 
 " Python mode
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
@@ -343,11 +343,16 @@ map <Leader>= <C-w>=
 
 nnoremap <leader>ff :normal! gg=G``<CR>
 
+nnoremap <leader>qw :cclose<CR>:pclose<CR>:lclose<CR>
+nnoremap <leader>qb :bp <BAR> bd #<CR>
+nnoremap <leader>qq :q<CR>
+nnoremap <leader>qa :qa<CR>
+
 "vnoremap <C-c> <Esc>
-"inoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
 
 " For practicing
-inoremap <Esc> <nop>
+"inoremap <Esc> <nop>
 inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>

@@ -14,6 +14,7 @@
 
 ### Vim
 
+- Fix the <C-C> and <Esc> problem
 - Better completion
   (https://github.com/Valloric/YouCompleteMe)
 - Textobjects for Jinja
