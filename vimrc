@@ -291,6 +291,8 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 let g:pymode_folding = 0
 let g:pymode_options = 0
 let g:pymode_rope = 0
+let g:pymode_run_bind = '<leader>pr'
+let g:pymode_breakpoint_bind = '<leader>pb'
 
 " Surround
 "let b:surround_{char2nr("v")} = "{{ \r }}"
@@ -395,7 +397,6 @@ noremap H ^
 noremap L g_
 
 cmap w!! w !sudo tee % >/dev/null
-map <Leader>= <C-w>=
 "nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
