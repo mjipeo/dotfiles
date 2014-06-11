@@ -14,10 +14,9 @@
 
 ### Vim
 
-- Change `mjipeo/*` repos to original one when properly merged
 - Better completion
   (https://github.com/Valloric/YouCompleteMe)
-- Textobjects
+- Textobjects for Jinja
   (https://github.com/skwp/dotfiles/blob/master/doc/vim/textobjects.md)
 - Finalze the key mapping for Tagbar and CtrlP
 - Might need easier mapping for Ag as well
@@ -32,10 +31,6 @@
 - Buffers over Tabs
   (http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs)
   (http://vim.wikia.com/wiki/Easier_buffer_switching#Scripts)
-- Wrapping
-  (http://blog.ezyang.com/2010/03/vim-textwidth/)
-  (http://vimcasts.org/episodes/soft-wrapping-text/)
-  (http://vimcasts.org/episodes/hard-wrapping-text/)
 - Folding
 - Lint libraries for Syntastic
 - Custom surround mappings
@@ -110,4 +105,36 @@ nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
 
+.   repeat last text-changing command
+~   reverse case of current character and move cursor forward
+`   move to marked line, memorized column`
+;   repeat last "f", "F", "t", or "T" command
++   move to first non-whitespace of next line
+-   move to first non-whitespace of previous line
+&   repeat last ex substitution (":s ...") not including modifiers
+a   enter insertion mode after current character
+A
+I
+X   delete backwards single character
+R   replace mode - replaces through end of current line, then inserts
+C   change to end of line
+cc
+
+t
+T
+f
+F
+
+w
+W
+b
+B
+e
+E
+
+]p [p       like p, P with indent adjusted]
+n^A n^X     +n, -n to number under cursor
+`c `C       go to mark c in current, C in any file
+n^O         go to nth older position in jump list
+n^I         go to nth newer position in jump list
 

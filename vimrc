@@ -27,7 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
@@ -35,11 +35,15 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'klen/python-mode'
+
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'kana/vim-textobj-user'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'ap/vim-css-color'
-Plugin 'mjipeo/vim-css-color'
+Plugin 'ap/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -61,6 +65,9 @@ syntax enable
 if has("gui_running")
     set guifont=Liberation\ Mono\ for\ Powerline:h14
 endif
+
+" Change the mapleader from \ to ,
+let mapleader=","
 
 " Colorscheme
 let g:solarized_termcolors=256
@@ -85,7 +92,7 @@ set undolevels=1000
 set list
 set listchars=tab:>-,trail:-,extends:#
 set wrap
-set pastetoggle=<F2>
+set pastetoggle=<leader>p
 set encoding=utf-8
 set showcmd
 set hidden " Controversial
@@ -100,11 +107,11 @@ set smartcase
 set gdefault
 set colorcolumn=80
 set textwidth=79
-"set formatoptions=qrn1
-set formatoptions+=n
+set formatoptions=cqnr1
 set cursorline
 set nojoinspaces
 set splitright
+
 set splitbelow
 
 " Status
@@ -115,6 +122,12 @@ set statusline+=%{fugitive#statusline()} " Git Hotness
 set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=\ [%{getcwd()}]          " Current dir
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+set wildignore+=*.so,*.swp,*.zip,*.pyc
+set wildignore+=*.o,*.out,*.obj,*.so,*.pyc
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/.sass-cache/*
+set wildignore+=*.swp,*~,._*
 
 set undodir=~/.tmp/vim/undo/
 set backupdir=~/.tmp/vim/backup/
@@ -129,9 +142,6 @@ endif
 if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
-
-" Change the mapleader from \ to ,
-let mapleader=","
 
 noremap <F1> <ESC>
 "nnoremap j gj
@@ -150,7 +160,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>aa :Ag 
 nnoremap <leader>as :Ag <cword><CR>
 if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
+    set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
 
 "let g:vim_markdown_initial_foldlevel=1
@@ -166,9 +176,6 @@ map <SPACE> <Plug>(easymotion-s2)
 
 " Sneak
 let g:sneak#use_ic_scs = 1
-
-" Tagbar
-nnoremap <leader>tt :TagbarToggle<CR>
 
 " Snipmate
 let g:snips_author = 'Minjong Chung<mjipeo@gmail.com>'
@@ -222,30 +229,37 @@ nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 
 " Tagbar
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>l :TagbarToggle<CR>
 
 " Ctrlp
-set wildignore+=*.so,*.swp,*.zip,*.pyc
 "let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  "\ 'file': '\v\.(exe|so|dll)$',
-  "\ 'link': 'some_bad_symbolic_links',
-  "\ }
+"\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"\ 'file': '\v\.(exe|so|dll)$',
+"\ 'link': 'some_bad_symbolic_links',
+"\ }
 
 let g:ctrlp_working_path_mode = 'rwa'
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.so$\|\.pyc$' }
-"let g:ctrlp_map = '<leader>f'
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+            \ 'file': '\.so$\|\.pyc$' }
+let g:ctrlp_map = '<leader>t'
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 "Tabular
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t: :Tabularize /:<CR>
-vmap <Leader>t: :Tabularize /:<CR>
-nmap <Leader>t, :Tabularize /,<CR>
-vmap <Leader>t, :Tabularize /,<CR>
+nmap <Leader>f& :Tabularize /&<CR>
+vmap <Leader>f& :Tabularize /&<CR>
+nmap <Leader>f= :Tabularize /=<CR>
+vmap <Leader>f= :Tabularize /=<CR>
+nmap <Leader>f: :Tabularize /:<CR>
+vmap <Leader>f: :Tabularize /:<CR>
+nmap <Leader>f:: :Tabularize /:\zs<CR>
+vmap <Leader>f:: :Tabularize /:\zs<CR>
+nmap <Leader>f, :Tabularize /,<CR>
+vmap <Leader>f, :Tabularize /,<CR>
+nmap <Leader>f,, :Tabularize /,\zs<CR>
+vmap <Leader>f,, :Tabularize /,\zs<CR>
+nmap <Leader>f<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>f<Bar> :Tabularize /<Bar><CR>
 
 "Indent-guides
 " let g:indent_guides_auto_colors = 0
@@ -260,17 +274,23 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " Jedi
-let g:jedi#use_tabs_not_buffers = 0
-"let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>jg"
-let g:jedi#goto_definitions_command = "<leader>jd"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>jn"
-let g:jedi#rename_command = "<leader>jr"
-"let g:jedi#completions_command = "<C-Space>"
-let g:jedi#completions_command = "<C-k>"
-let g:jedi#show_call_signatures = "1"
+"let g:jedi#use_tabs_not_buffers = 0
+""let g:jedi#use_splits_not_buffers = "right"
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#goto_assignments_command = "<leader>jg"
+"let g:jedi#goto_definitions_command = "<leader>jd"
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>jn"
+"let g:jedi#rename_command = "<leader>jr"
+""let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#completions_command = "<C-k>"
+"let g:jedi#show_call_signatures = "1"
+
+" Python mode
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
+let g:pymode_folding = 0
+let g:pymode_options = 0
+let g:pymode_rope = 0
 
 " Surround
 "let b:surround_{char2nr("v")} = "{{ \r }}"
@@ -298,7 +318,7 @@ nnoremap <leader>sc :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 "let g:signify_vcs_list = ['git']
 
 " Gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 """""""""""
 """""""""""
@@ -306,7 +326,7 @@ nnoremap <F5> :GundoToggle<CR>
 """""""""""
 """""""""""
 
-set scrolloff=3
+set scrolloff=2
 
 cabbrev ht tab help
 cabbrev hv vert help
@@ -315,6 +335,11 @@ cabbrev hv vert help
 nnoremap <leader>re :e $MYVIMRC<CR>
 nnoremap <leader>rv :vs $MYVIMRC<CR>
 nnoremap <leader>rs :so $MYVIMRC<CR>
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+nnoremap <leader>ff :normal! gg=G``<CR>
 
 "vnoremap <C-c> <Esc>
 "inoremap <C-c> <Esc>
@@ -374,7 +399,7 @@ map <Leader>= <C-w>=
 "nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                         \ exe "normal g'\"" | endif
+            \ exe "normal g'\"" | endif
 
 " Directory
 cmap cwd lcd %:p:h
@@ -388,13 +413,13 @@ map <leader>et :tabe %%
 " Open URL
 "command -bar -nargs=1 OpenURL :!open <args>
 function! OpenURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-      exec "!open \"" . s:uri . "\""
-  else
-      echo "No URI found in line."
-  endif
+    let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+    echo s:uri
+    if s:uri != ""
+        exec "!open \"" . s:uri . "\""
+    else
+        echo "No URI found in line."
+    endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
@@ -411,10 +436,11 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 "autocmd FileType javascript setlocal nocindent
 
 autocmd BufNewFile,BufRead *.html set filetype=htmljinja
+autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd Filetype javascript,css,less,html,htmldjango,htmljinja setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable(".vimrc.local")
-  source .vimrc.local
+    source .vimrc.local
 endif
 
