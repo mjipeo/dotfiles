@@ -284,7 +284,7 @@ let g:jedi#usages_command = "<leader>ju"
 let g:jedi#rename_command = "<leader>jr"
 "let g:jedi#completions_command = "<C-Space>"
 let g:jedi#completions_command = "<C-k>"
-let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures = 0
 
 " Python mode
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
