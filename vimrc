@@ -328,7 +328,7 @@ nnoremap <leader>u :GundoToggle<CR>
 """""""""""
 """""""""""
 
-set scrolloff=2
+set scrolloff=1
 
 cabbrev ht tab help
 cabbrev hv vert help
