@@ -60,6 +60,10 @@
   (https://github.com/rtomayko/dotfiles/tree/rtomayko/bin)
 
 
+## Snippet
+
+- __init__ with args
+
 ## Tips
 
 Finally, Vim has built in tag support for motions. This means that, if you’re
