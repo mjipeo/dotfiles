@@ -24,7 +24,7 @@ Plugin 'justinmk/vim-sneak'
 "Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'davidhalter/jedi-vim'
@@ -306,15 +306,16 @@ let g:pymode_breakpoint_bind = '<leader>pb'
 
 " Syntastic
 "let g:syntastic_auto_loc_list=1
-let g:syntastic_auto_loc_list=0
-let g:syntastic_check_on_open=0
-let g:syntastic_auto_jump=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_error_symbol = 'e'
-let g:syntastic_warning_symbol = 'w'
 "let g:syntastic_csslint_options = "--ignore=ids"
-nnoremap <leader>sr :SyntasticReset<CR>
-nnoremap <leader>sc :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+"
+"let g:syntastic_auto_loc_list=0
+"let g:syntastic_check_on_open=0
+"let g:syntastic_auto_jump=1
+"let g:syntastic_check_on_wq=0
+"let g:syntastic_error_symbol = 'e'
+"let g:syntastic_warning_symbol = 'w'
+"nnoremap <leader>sr :SyntasticReset<CR>
+"nnoremap <leader>sc :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 " Signify
 "let g:signify_vcs_list = ['git']

@@ -14,6 +14,7 @@
 
 ### Vim
 
+- http://benmccormick.org/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins/
 - Fix the <C-C> and <Esc> problem
 - Better completion
   (https://github.com/Valloric/YouCompleteMe)
