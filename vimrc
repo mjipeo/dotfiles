@@ -49,6 +49,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'mitsuhiko/vim-jinja'
+Plugin 'stephpy/vim-yaml'
 
 Plugin 'altercation/vim-colors-solarized'
 
@@ -444,7 +445,7 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 
 autocmd BufNewFile,BufRead *.html set filetype=htmljinja
 autocmd BufNewFile,BufRead *.json set filetype=javascript
-autocmd Filetype javascript,css,less,html,htmldjango,htmljinja setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype javascript,css,less,html,htmldjango,htmljinja,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable(".vimrc.local")
