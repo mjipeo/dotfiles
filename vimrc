@@ -444,6 +444,7 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 " don't use cindent for javascript
 "autocmd FileType javascript setlocal nocindent
 
+autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd BufNewFile,BufRead *.html set filetype=htmljinja
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd Filetype javascript,css,less,html,htmldjango,htmljinja,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
