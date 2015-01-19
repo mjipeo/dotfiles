@@ -3,7 +3,6 @@
 
 case `uname` in
     Darwin)
-        alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
         ;;
     Linux)
         ;;
