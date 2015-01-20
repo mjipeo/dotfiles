@@ -450,7 +450,7 @@ autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd Filetype javascript,css,less,html,htmldjango,htmljinja,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
-if filereadable(".vimrc.local")
-    source .vimrc.local
+if filereadable($HOME.'/.vimrc.local')
+    source $HOME/.vimrc.local
 endif
 
