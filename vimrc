@@ -31,7 +31,7 @@ Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
-"Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -447,7 +447,7 @@ iab <expr> ymdt strftime("%Y-%m-%d %H:%M")
 autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd BufNewFile,BufRead *.html set filetype=htmljinja
 autocmd BufNewFile,BufRead *.json set filetype=javascript
-autocmd Filetype javascript,css,less,html,htmldjango,htmljinja,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype scss,javascript,css,less,html,htmldjango,htmljinja,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Local config
 if filereadable($HOME.'/.vimrc.local')
