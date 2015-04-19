@@ -233,6 +233,9 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 " Tagbar
 nnoremap <silent> <leader>l :TagbarToggle<CR>
 
+" Gitgutter
+let g:gitgutter_max_signs=5000
+
 " Ctrlp
 "let g:ctrlp_custom_ignore = {
 "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
