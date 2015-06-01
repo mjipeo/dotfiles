@@ -422,6 +422,8 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
+nnoremap <leader>zz :%s/\s\+$//e<CR>
+
 " Open URL
 "command -bar -nargs=1 OpenURL :!open <args>
 function! OpenURL()
