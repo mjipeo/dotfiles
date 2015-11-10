@@ -355,6 +355,11 @@ nnoremap <leader>qa :qa<CR>
 "vnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 
+nnoremap <leader>w> :10winc ><CR>
+nnoremap <leader>w< :10winc <<CR>
+nnoremap <leader>w+ :10winc +<CR>
+nnoremap <leader>w- :10winc -<CR>
+
 " For practicing
 "inoremap <Esc> <nop>
 inoremap <Up> <nop>
