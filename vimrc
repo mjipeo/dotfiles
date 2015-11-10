@@ -294,6 +294,8 @@ let g:pymode_options = 0
 let g:pymode_rope = 0
 let g:pymode_run_bind = '<leader>pr'
 let g:pymode_breakpoint_bind = '<leader>pb'
+let g:pymode_lint_unmodified = 1
+let g:pymode_lint_ignore = "W0401"
 
 " Surround
 "let b:surround_{char2nr("v")} = "{{ \r }}"
