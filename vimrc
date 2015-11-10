@@ -1,14 +1,11 @@
 set nocompatible
 
-
-" Vundle filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugins
 Plugin 'gmarik/Vundle.vim'
 
+" Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
@@ -16,19 +13,15 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'rstacruz/sparkup'
-"Plugin 'msanders/snipmate.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'justinmk/vim-sneak'
-"Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'davidhalter/jedi-vim'
-"Plugin 'ervandew/supertab'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
@@ -36,11 +29,15 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'klen/python-mode'
-
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'kana/vim-textobj-user'
+"Plugin 'ervandew/supertab'
+"Plugin 'msanders/snipmate.vim'
+"Plugin 'myusuf3/numbers.vim'
+"Plugin 'scrooloose/syntastic'
 
+" Language & Syntax
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ap/vim-css-color'
@@ -52,6 +49,7 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'stephpy/vim-yaml'
 Plugin 'fatih/vim-go'
 
+" Theme
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
@@ -113,8 +111,22 @@ set formatoptions=cqnr1
 set cursorline
 set nojoinspaces
 set splitright
-
 set splitbelow
+
+" Backup & Directory
+set undodir=~/.tmp/vim/undo/
+set backupdir=~/.tmp/vim/backup/
+set directory=~/.tmp/vim/swap/
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
 
 " Status
 set laststatus=2
@@ -131,31 +143,16 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
-set undodir=~/.tmp/vim/undo/
-set backupdir=~/.tmp/vim/backup/
-set directory=~/.tmp/vim/swap/
-
-if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
-endif
-if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
-endif
-if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
-endif
-
 noremap <F1> <ESC>
-"nnoremap j gj
-"nnoremap k gk
-"nnoremap ; :
 nnoremap Y y$
 nnoremap / /\v
 vnoremap / /\v
-nmap <tab> %
-vmap <tab> %
-"nnoremap <CR> :nohlsearch<CR>
+"nmap <tab> %
+"vmap <tab> %
 nnoremap <leader><space> :nohlsearch<CR>
+"nnoremap j gj
+"nnoremap k gk
+"nnoremap ; :
 "inoremap jj <ESC>
 
 " Plugin-specific
@@ -167,7 +164,7 @@ endif
 
 "let g:vim_markdown_initial_foldlevel=1
 let g:vim_markdown_folding_disabled=1
-"let g:sneak#streak=1
+
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 map <SPACE> <Plug>(easymotion-s2)
@@ -178,6 +175,7 @@ map <SPACE> <Plug>(easymotion-s2)
 
 " Sneak
 let g:sneak#use_ic_scs = 1
+"let g:sneak#streak=1
 
 " Snipmate
 let g:snips_author = 'Minjong Chung<mjipeo@gmail.com>'
@@ -222,33 +220,31 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gl :Git pull<CR>
+nnoremap <silent> <leader>gb :Git branch<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <leader>gg :Git 
+nnoremap <leader>gc :Git checkout 
+nnoremap <leader>gm :Git merge 
 
 " Tagbar
-nnoremap <silent> <leader>l :TagbarToggle<CR>
+"nnoremap <silent> <leader>l :TagbarToggle<CR>
 
 " Gitgutter
 let g:gitgutter_max_signs=5000
 
 " Ctrlp
-"let g:ctrlp_custom_ignore = {
-"\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"\ 'file': '\v\.(exe|so|dll)$',
-"\ 'link': 'some_bad_symbolic_links',
-"\ }
 let g:ctrlp_working_path_mode = 'rwa'
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-            \ 'file': '\.so$\|\.pyc$' }
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.so$\|\.pyc$'}
 let g:ctrlp_map = '<leader>t'
 nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>l :CtrlPLine<CR>
 
 "Tabular
 nmap <Leader>f& :Tabularize /&<CR>
@@ -458,4 +454,3 @@ autocmd Filetype scss,javascript,css,less,html,htmldjango,htmljinja,yaml setloca
 if filereadable($HOME.'/.vimrc.local')
     source $HOME/.vimrc.local
 endif
-
