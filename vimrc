@@ -220,6 +220,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gf :Git diff<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gl :Git pull<CR>
 nnoremap <silent> <leader>gb :Git branch<CR>
