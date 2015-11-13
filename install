@@ -9,12 +9,13 @@ mv .vim .dotfiles_old
 mv .zshrc .dotfiles_old
 
 # Clone dotfiles repo
-#git clone https://github.com/mjipeo/dotfiles.git .dotfiles
+git clone https://github.com/mjipeo/dotfiles.git .dotfiles
 ln -s .dotfiles/vimrc .vimrc
 ln -s .dotfiles/vim .vim
 ln -s .dotfiles/zshrc .zshrc
 
 # Install dependencies
+# TODO: Homebrew
 # TODO: Zsh
 # TODO: Ag
 #       brew install the_silver_searcher
@@ -27,4 +28,3 @@ git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
 
 # Install Vundle plugins
 vim +PluginInstall +qall
-
