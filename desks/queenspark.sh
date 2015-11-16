@@ -15,10 +15,10 @@ alias web2='ssh deploy@ec2-52-25-204-50.us-west-2.compute.amazonaws.com'
 
 # Directory
 
-alias queenspark='cd $PROJECT_PATH'
+alias queenspark='cd ${PROJECT_PATH}'
 alias q='queenspark'
-alias qb='cd $PROJECT_PATH/backend'
-alias qf='cd $PROJECT_PATH/frontend'
+alias qb='cd ${PROJECT_PATH}/backend'
+alias qf='cd ${PROJECT_PATH}/frontend'
 
 export DJANGO_SETTINGS_MODULE='queenspark.settings.local'
 
