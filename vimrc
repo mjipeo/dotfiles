@@ -97,6 +97,7 @@ inoremap <Up> <nop>
 nnoremap / /\v
 nnoremap <F1> <ESC>
 nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>de :e ~/.desk/desks<CR>
 nnoremap <leader>f0 :set foldlevel=0<CR>
 nnoremap <leader>f1 :set foldlevel=1<CR>
 nnoremap <leader>f2 :set foldlevel=2<CR>
