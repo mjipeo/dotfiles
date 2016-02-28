@@ -150,7 +150,7 @@ cnoremap <C-f>  <Right>
 cnoremap w!! w !sudo tee % >/dev/null
 
 autocmd bufnewfile,bufread *.go set filetype=go
-autocmd bufnewfile,bufread *.html set filetype=htmljinja
+autocmd bufnewfile,bufread *.html set filetype=htmldjango
 autocmd bufnewfile,bufread *.json set filetype=javascript
 autocmd bufreadpost * if line("'\"") > 0 && line("'\"") <= line("$") |
     \ exe "normal g'\"" | endif
