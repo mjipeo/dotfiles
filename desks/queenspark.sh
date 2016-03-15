@@ -11,6 +11,7 @@ alias dev='ssh deploy@54.178.183.100'
 
 alias factory='ssh deploy@52.77.25.219'
 alias proxy='ssh deploy@52.76.238.143'
+alias search='ssh deploy@54.255.131.195'
 alias web1='ssh deploy@ec2-54-251-152-44.ap-southeast-1.compute.amazonaws.com'
 alias web2='ssh deploy@ec2-54-179-140-92.ap-southeast-1.compute.amazonaws.com'
 alias gitlab='ssh -i ~/Key/projectt.pem ubuntu@52.79.105.235'

@@ -15,7 +15,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 DEFAULT_USER=`whoami`
 
-plugins=(git python)
+plugins=(git python desk)
 
 
 # Activate oh-my-zsh
