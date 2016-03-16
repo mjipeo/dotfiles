@@ -9,6 +9,7 @@ PROJECT_PATH=~/workspace/queenspark
 
 alias dev='ssh deploy@54.178.183.100'
 
+alias redis='ssh deploy@52.77.73.188'
 alias factory='ssh deploy@52.77.72.58'
 alias proxy='ssh deploy@52.76.238.143'
 alias search='ssh deploy@54.255.131.195'
