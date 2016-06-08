@@ -215,6 +215,7 @@ Plugin 'othree/html5.vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'stephpy/vim-yaml'
 Plugin 'fatih/vim-go'
+Plugin 'mxw/vim-jsx'
 
 " Theme / Appearance
 Plugin 'bling/vim-airline'
