@@ -310,7 +310,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.so$\|\.pyc$'}
 let g:ctrlp_map = '<leader>t'
-let g:ctrlp_max_files = 10000
+let g:ctrlp_max_files = 50000
 let g:ctrlp_max_depth = 40
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>l :CtrlPLine<CR>
