@@ -7,7 +7,7 @@ PROJECT_PATH=~/workspace/delisse
 
 # Server
 
-# TODO: Add server commands
+alias prod='ssh deploy@13.124.32.126'
 
 # Directory
 
