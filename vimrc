@@ -388,6 +388,12 @@ if has("gui_running")
 endif
 
 
+" -----------------------------
+" Plugin: JSX
+" -----------------------------
+let g:jsx_ext_required = 0
+
+
 " ==============
 " Initialization
 " ==============
