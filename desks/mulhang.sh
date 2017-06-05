@@ -12,4 +12,4 @@ alias prod='ssh deploy@13.124.32.126'
 # Directory
 
 alias mulhang='cd ${PROJECT_PATH}'
-alias dm='mulhang'
+alias m='mulhang'
