@@ -13,3 +13,5 @@ alias prod='ssh deploy@13.124.32.126'
 
 alias mulhang='cd ${PROJECT_PATH}'
 alias m='mulhang'
+
+cd $PROJECT_PATH
