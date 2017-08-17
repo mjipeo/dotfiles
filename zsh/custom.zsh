@@ -1,5 +1,5 @@
 # Basics
-# ------
+# ======
 
 case `uname` in
     Darwin)
@@ -11,9 +11,8 @@ esac
 alias vi='vim'
 alias v='vim'
 
-
 # Virtualenv
-# ----------
+# ==========
 
 export WORKON_HOME=${WORKON_HOME:-$HOME/.virtualenvs}
 export VIRTUALENVWRAPPER_PYTHON=${VIRTUALENVWRAPPER_PYTHON:-`which python`}
@@ -21,9 +20,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=${VIRTUALENVWRAPPER_VIRTUALENV:-`which virtu
 
 source ${VIRTUALENVWRAPPER_SCRIPT:-`which virtualenvwrapper.sh`}
 
-
 # Utilities
-# ---------
+# =========
 
 # Easily extract all compressed file types
 extract () {
