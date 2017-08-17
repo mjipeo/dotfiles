@@ -7,7 +7,7 @@ PROJECT_PATH=~/workspace/mulhang
 
 # Server
 
-alias prod='ssh deploy@13.124.32.126'
+alias prod='ssh deploy@13.228.62.43'
 
 # Directory
 
