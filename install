@@ -2,26 +2,43 @@
 
 cd ~
 
-# Backup old files
-mkdir .dotfiles_old
-mv .vimrc .dotfiles_old
-mv .vim .dotfiles_old
-mv .zshrc .dotfiles_old
+# Install package manager
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install related packages
+brew install git
+brew install the_silver_searcher
+brew install ctags-exuberant
+
+# Install Python packages
+sudo easy_install pip
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+
+# Install Oh My Zsh
+if [ -d ".oh-my-zsh" ]; then
+    cd .oh-my-zsh && git pull origin master && cd ~
+else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
 # Clone dotfiles repo
-git clone https://github.com/mjipeo/dotfiles.git .dotfiles
+if [ -d ".dotfiles" ]; then
+    cd .dotfiles && git pull origin master && cd ~
+else
+    git clone https://github.com/mjipeo/dotfiles.git .dotfiles
+fi
+
+# Backup old files
+mkdir -p .dotfiles_old
+[ -d ".vim" ] && mv .vim .dotfiles_old
+[ -f ".vimrc" ] && mv .vimrc .dotfiles_old
+[ -f ".zshrc" ] && mv .zshrc .dotfiles_old
+
+# Link rc files
 ln -s .dotfiles/vimrc .vimrc
 ln -s .dotfiles/vim .vim
 ln -s .dotfiles/zshrc .zshrc
-
-# Install dependencies
-# TODO: Homebrew
-# TODO: Zsh
-# TODO: Ag
-#       brew install the_silver_searcher
-#       brew install automake pkg-config  pcre
-# TODO: Exuberant ctags for Tagbar
-#       brew install ctags-exuberant
 
 # Install Vundle first
 git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim

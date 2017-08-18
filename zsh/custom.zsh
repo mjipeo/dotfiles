@@ -1,15 +1,21 @@
 # Basics
 # ======
 
+export PATH="$HOME/bin:$PATH"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+export EDITOR='vim'
+
+alias vi='vim'
+alias v='vim'
+
 case `uname` in
     Darwin)
         ;;
     Linux)
         ;;
 esac
-
-alias vi='vim'
-alias v='vim'
 
 # Virtualenv
 # ==========

@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd ~/.dotfiles
-git pull
+git pull origin master
 vim +PluginUpdate +qall

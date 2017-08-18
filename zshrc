@@ -1,6 +1,3 @@
-# Pre oh-my-zsh
-# =============
-
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 
@@ -15,21 +12,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 DEFAULT_USER=`whoami`
 
-plugins=(git python desk)
-
-# Activate oh-my-zsh
-# ==================
+plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
-
-# Post oh-my-zsh
-# ==============
-
-export PATH="$HOME/bin:$PATH"
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-
-# Load local config if any
-# ========================
-
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[ -f "~/.zshrc.local" ] && source ~/.zshrc.local
