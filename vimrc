@@ -381,8 +381,11 @@ nnoremap <leader>u :GundoToggle<CR>
 " Plugin: Solarized
 " -----------------------------
 let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+try
+    colorscheme solarized
+    set background=dark
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
 if has("gui_running")
     set guifont=Liberation\ Mono\ for\ Powerline:h14
 endif

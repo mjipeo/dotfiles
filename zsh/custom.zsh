@@ -17,6 +17,11 @@ case `uname` in
         ;;
 esac
 
+# Direnv
+# ======
+
+eval "$(direnv hook zsh)"
+
 # Virtualenv
 # ==========
 

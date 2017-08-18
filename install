@@ -9,11 +9,12 @@ cd ~
 brew install git
 brew install the_silver_searcher
 brew install ctags-exuberant
+brew install direnv
 
 # Install Python packages
 sudo easy_install pip
 sudo pip install virtualenv
-sudo pip install virtualenvwrapper
+sudo pip install virtualenvwrapper --ignore-installed
 
 # Install Oh My Zsh
 if [ -d ".oh-my-zsh" ]; then
