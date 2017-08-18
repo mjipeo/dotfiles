@@ -41,7 +41,11 @@ ln -s .dotfiles/vim .vim
 ln -s .dotfiles/zshrc .zshrc
 
 # Install Vundle first
-git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
+if [ -d ".vim/bundle/Vundle.vim" ]; then
+    cd .vim/bundle/Vundle.vim && git pull origin master && cd ~
+else
+    git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
+fi
 
 # Install Vundle plugins
 vim +PluginInstall +qall
