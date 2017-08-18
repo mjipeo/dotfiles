@@ -273,7 +273,7 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
-let NERDTreeWinSize=25
+let NERDTreeWinSize=30
 nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
 
