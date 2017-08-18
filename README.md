@@ -1,15 +1,6 @@
 # Dotfiles
 
-Dotfiles
-
-## Dependencies
-
-- Ag
-- Exuberant ctags (for Tagbar)
-- Solarized color themes for iTerm2
-- Patched fonts for powerline symbols (for vim-airline)
-  (https://github.com/Lokaltog/powerline-fonts)
-
+My own dotfiles
 
 ## Todo
 
@@ -30,4 +21,3 @@ Dotfiles
 ### Dotfiles
 
 - gitconfig
-- bootstrap script
