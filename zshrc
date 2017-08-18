@@ -8,11 +8,11 @@ DISABLE_LS_COLORS="false"
 DISABLE_AUTO_TITLE="false"
 DISABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="false"
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 DEFAULT_USER=`whoami`
 
-plugins=(git python)
+plugins=(git python virtualenv vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-[ -f "~/.zshrc.local" ] && source ~/.zshrc.local
+[ -f "$HOME/.zshrc.local" ] && source ~/.zshrc.local
