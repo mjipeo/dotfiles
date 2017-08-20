@@ -309,8 +309,9 @@ let g:gitgutter_max_signs=5000
 let g:ctrlp_working_path_mode = 'rwa'
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.so$\|\.pyc$'}
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|node_modules$\|bower_components$',
+    \ 'file': '\.so$\|\.pyc$\|\.jpe\?g$\|\.gif$\|\.png$\|\.eot$\|\.ttf$\|\.woff$\|\.woff2$\|\.swf$\|\.otf$'
+\ }
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_max_files = 50000
 let g:ctrlp_max_depth = 40
