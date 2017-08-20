@@ -269,11 +269,11 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
-let NERDTreeWinSize=30
+let NERDTreeWinSize=40
 nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
 
@@ -314,6 +314,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_max_files = 50000
 let g:ctrlp_max_depth = 40
+let g:ctrlp_match_window = 'max:20'
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>l :CtrlPLine<CR>
 
