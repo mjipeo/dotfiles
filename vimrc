@@ -187,6 +187,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 
+" Tmux
+Plugin 'christoomey/vim-tmux-navigator'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
