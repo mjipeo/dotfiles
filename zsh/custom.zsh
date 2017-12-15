@@ -9,6 +9,7 @@ export EDITOR='vim'
 
 alias vi='vim'
 alias v='vim'
+alias mux='tmuxinator'
 
 case `uname` in
     Darwin)

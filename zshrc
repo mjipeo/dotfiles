@@ -12,7 +12,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 DEFAULT_USER=`whoami`
 
-plugins=(tmux git python virtualenv vi-mode)
+plugins=(git python virtualenv vi-mode tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.zshrc.local" ] && source ~/.zshrc.local
