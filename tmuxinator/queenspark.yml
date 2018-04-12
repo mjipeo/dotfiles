@@ -1,0 +1,33 @@
+# ~/.tmuxinator/queenspark.yml
+
+name: queenspark
+root: ~/Workspace/queenspark
+
+windows:
+  - editor:
+      layout: 89df,208x59,0,0[208x48,0,0,0,208x10,0,49,3]
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vim
+        - cd backend
+  - backend:
+      layout: fc14,208x59,0,0[209x42,0,0{104x42,0,0,1,104x42,105,0,4},209x8,0,43,5,209x7,0,52,7]
+      root: ~/Workspace/queenspark/backend
+      panes:
+        - python manage.py runserver
+        - python manage.py runceleryworkers
+        - tail -f ../log/local.log
+        - python manage.py runaggregator
+  - frontend:
+      layout: even-horizontal
+      panes:
+        - trade:
+          - cd frontend-trade
+          - gulp
+        - admin:
+          - cd frontend-admin
+          - gulp
+  - remote: ssh deploy@52.77.72.58 tail -f /home/deploy/workspace/queenspark/log/remote.log
+  - shell:

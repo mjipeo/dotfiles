@@ -1,0 +1,9 @@
+# ~/.tmuxinator/mulhang.yml
+
+name: mulhang
+root: ~/Workspace/mulhang
+
+windows:
+  - editor: vim
+  - server: npm start
+  - shell:

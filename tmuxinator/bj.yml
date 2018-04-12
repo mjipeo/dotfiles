@@ -1,0 +1,23 @@
+# ~/.tmuxinator/bj.yml
+
+name: bj
+root: ~/Workspace/bj
+
+windows:
+  - editor:
+      layout: 89df,208x59,0,0[208x48,0,0,0,208x10,0,49,3]
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vim
+        - cd back
+  - backend:
+      layout: fc14,208x59,0,0[209x42,0,0{104x42,0,0,1,104x42,105,0,4},209x8,0,43,5,209x7,0,52,7]
+      root: ~/Workspace/bj/back
+      panes:
+        - python manage.py runserver
+        - bin/celery_worker
+        - tail -f ../log/local.log
+  - remote: ssh deploy@52.78.190.141 tail -f /home/deploy/workspace/bj/log/local.log
+  - shell:

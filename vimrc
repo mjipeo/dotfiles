@@ -9,6 +9,7 @@ syntax enable
 let mapleader=","
 
 set autoindent
+set autoread
 set backspace=indent,eol,start
 set backupdir=~/.tmp/vim/backup/
 set colorcolumn=80
