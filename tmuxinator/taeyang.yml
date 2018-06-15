@@ -1,0 +1,9 @@
+# ~/.tmuxinator/taeyang.yml
+
+name: taeyang
+root: ~/Workspace/taeyang
+
+windows:
+  - editor: vim
+  - server: npm start
+  - shell:

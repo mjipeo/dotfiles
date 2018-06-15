@@ -1,0 +1,8 @@
+# ~/.tmuxinator/golmok.yml
+
+name: golmok
+root: ~/Workspace/golmok
+
+windows:
+  - editor: vim
+  - shell:
