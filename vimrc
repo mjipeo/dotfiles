@@ -95,7 +95,7 @@ inoremap <Right> <nop>
 inoremap <Up> <nop>
 "inoremap <Esc> <nop>
 
-nnoremap / /\v
+"nnoremap / /\v
 nnoremap <F1> <ESC>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>de :e ~/.desk/desks<CR>
