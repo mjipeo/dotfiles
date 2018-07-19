@@ -188,6 +188,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 
+" Linting
+Plugin 'w0rp/ale'
+
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -262,6 +265,7 @@ let g:sneak#use_ic_scs = 1
 " Plugin: Airline
 " -----------------------------
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#ale#enabled = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -403,6 +407,14 @@ endif
 " Plugin: JSX
 " -----------------------------
 let g:jsx_ext_required = 0
+
+
+" -----------------------------
+" Plugin: ALE
+" -----------------------------
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
 
 
 " ==============
