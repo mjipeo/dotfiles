@@ -208,7 +208,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Python
-Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
 
@@ -359,29 +358,32 @@ autocmd filetype python,html,htmldjango,htmljinja :IndentGuidesEnable
 " -----------------------------
 " Plugin: Jedi
 " -----------------------------
-let g:jedi#completions_command = "<C-k>"
-let g:jedi#documentation_command = "K"
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#smart_auto_mappings = 0
 let g:jedi#goto_assignments_command = "<leader>ja"
 let g:jedi#goto_definitions_command = "<leader>jd"
-let g:jedi#popup_on_dot = 0
 let g:jedi#rename_command = "<leader>jr"
-let g:jedi#show_call_signatures = 0
 let g:jedi#usages_command = "<leader>ju"
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#completions_enabled = 0
-let g:jedi#smart_auto_mappings = 0
+let g:jedi#documentation_command = "<leader>jk"
 
 " -----------------------------
 " Plugin: Python mode
 " -----------------------------
-let g:pymode_breakpoint_bind = '<leader>pb'
+let g:pymode = 1
+let g:pymode_indent = 1
 let g:pymode_folding = 0
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']
-let g:pymode_lint_ignore = "W0401,E402,W0611,C901"
-let g:pymode_lint_unmodified = 1
-let g:pymode_options = 0
+let g:pymode_motion = 1
+let g:pymode_doc = 0
+let g:pymode_virtualenv = 0
+let g:pymode_run = 0
+let g:pymode_breakpoint = 0
+let g:pymode_lint = 0
 let g:pymode_rope = 0
-let g:pymode_run_bind = '<leader>pr'
+let g:pymode_syntax = 1
 
 " -----------------------------
 " Plugin: Gundo
@@ -414,7 +416,9 @@ let g:jsx_ext_required = 0
 " -----------------------------
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
+\   'python': ['yapf'],
 \}
+nnoremap <leader>af :ALEFix<CR>
 
 
 " ==============
