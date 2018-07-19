@@ -54,6 +54,7 @@ set title
 set undodir=~/.tmp/vim/undo/
 set undofile
 set undolevels=1000
+set updatetime=100
 set visualbell
 set wildignore+=*.o,*.out,*.obj,*.so,*.pyc
 set wildignore+=*.so,*.swp,*.zip,*.pyc
