@@ -225,6 +225,7 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'fatih/vim-go'
 Plugin 'mxw/vim-jsx'
 Plugin 'styled-components/vim-styled-components'
+Plugin 'jparise/vim-graphql'
 
 " Theme / Appearance
 Plugin 'bling/vim-airline'
