@@ -1,7 +1,8 @@
 # Basics
 # ======
 
-export PATH="$HOME/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$HOME/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
@@ -19,19 +20,30 @@ case `uname` in
         ;;
 esac
 
-# Direnv
-# ======
 
-eval "$(direnv hook zsh)"
+# Pyenv & Virtualenv
+# ==================
+
+#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+#pyenv virtualenvwrapper_laz
 
 # Virtualenv
 # ==========
 
-export WORKON_HOME=${WORKON_HOME:-$HOME/.virtualenvs}
-export VIRTUALENVWRAPPER_PYTHON=${VIRTUALENVWRAPPER_PYTHON:-`which python`}
-export VIRTUALENVWRAPPER_VIRTUALENV=${VIRTUALENVWRAPPER_VIRTUALENV:-`which virtualenv`}
+# export WORKON_HOME=${WORKON_HOME:-$HOME/.virtualenvs}
+# export VIRTUALENVWRAPPER_PYTHON=${VIRTUALENVWRAPPER_PYTHON:-`which python`}
+# export VIRTUALENVWRAPPER_VIRTUALENV=${VIRTUALENVWRAPPER_VIRTUALENV:-`which virtualenv`}
 
-source ${VIRTUALENVWRAPPER_SCRIPT:-`which virtualenvwrapper.sh`}
+# source ${VIRTUALENVWRAPPER_SCRIPT:-`which virtualenvwrapper.sh`}
+
+# Direnv
+# ======
+
+eval "$(direnv hook zsh)"
 
 # Utilities
 # =========

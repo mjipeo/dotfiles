@@ -205,12 +205,12 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'michaeljsmith/vim-indent-object'
 
 " Snippet
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 
 " Language / Framework / Syntax
 Plugin 'pangloss/vim-javascript'
