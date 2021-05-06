@@ -17,17 +17,17 @@ windows:
       root: ~/Workspace/queenspark/backend
       panes:
         - python manage.py runserver
-        - python manage.py runceleryworkers
-        - tail -f ../log/local.log
-        - python manage.py runaggregator
-  - frontend:
-      layout: even-horizontal
-      panes:
-        - trade:
-          - cd frontend-trade
-          - gulp
-        - admin:
-          - cd frontend-admin
-          - gulp
-  - remote: ssh deploy@52.77.72.58 tail -f /home/deploy/workspace/queenspark/log/remote.log
+        #- python manage.py runceleryworkers
+        #- tail -f ../log/local.log
+        #- python manage.py runaggregator
+  #- frontend:
+      #layout: even-horizontal
+      #panes:
+        #- trade:
+          #- cd frontend-trade
+          #- gulp
+        #- admin:
+          #- cd frontend-admin
+          #- gulp
+  #- remote: ssh deploy@52.77.72.58 tail -f /home/deploy/workspace/queenspark/log/remote.log
   - shell:

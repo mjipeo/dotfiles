@@ -12,7 +12,7 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=~/.tmp/vim/backup/
-set colorcolumn=80
+set colorcolumn=89
 set copyindent
 set cursorline
 set directory=~/.tmp/vim/swap/
@@ -49,7 +49,7 @@ set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=\ [%{getcwd()}]          " Current dir
 set statusline=%<%f\                     " Filename
 set tabstop=4
-set textwidth=79
+set textwidth=88
 set title
 set undodir=~/.tmp/vim/undo/
 set undofile
@@ -190,7 +190,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
 
 " Linting
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
@@ -210,7 +210,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 
 " Language / Framework / Syntax
 Plugin 'pangloss/vim-javascript'
@@ -277,7 +277,7 @@ let g:airline_powerline_fonts=1
 " -----------------------------
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '__pycache__', '\.pytest_cache']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
@@ -386,6 +386,7 @@ let g:pymode_breakpoint = 0
 let g:pymode_lint = 0
 let g:pymode_rope = 0
 let g:pymode_syntax = 1
+let g:pymode_options_max_line_length = 88
 
 " -----------------------------
 " Plugin: Gundo
@@ -416,9 +417,12 @@ let g:jsx_ext_required = 0
 " -----------------------------
 " Plugin: ALE
 " -----------------------------
+let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E203,W503'
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'python': ['yapf'],
+\   'python': ['black'],
 \}
 nnoremap <leader>af :ALEFix<CR>
 
