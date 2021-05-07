@@ -417,12 +417,11 @@ let g:jsx_ext_required = 0
 " -----------------------------
 " Plugin: ALE
 " -----------------------------
-let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E203,W503'
 let g:ale_linters = {
 \   'python': ['flake8'],
 \}
 let g:ale_fixers = {
-\   'python': ['black'],
+\   'python': ['black', 'isort'],
 \}
 nnoremap <leader>af :ALEFix<CR>
 
