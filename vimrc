@@ -12,7 +12,7 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=~/.tmp/vim/backup/
-set clipboard^=unnamed
+set clipboard=unnamed
 set colorcolumn=89
 set copyindent
 set cursorline
