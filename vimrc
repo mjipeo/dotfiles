@@ -173,7 +173,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Enhancement
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+"Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-unimpaired'
@@ -315,20 +317,26 @@ nnoremap <leader>v :TagbarToggle<CR>
 let g:gitgutter_max_signs=5000
 
 " -----------------------------
+" Plugin: fzf
+" -----------------------------
+nnoremap <leader>t :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
+" -----------------------------
 " Plugin: Ctrlp
 " -----------------------------
-let g:ctrlp_working_path_mode = 'rwa'
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|node_modules$\|bower_components$',
-    \ 'file': '\.so$\|\.pyc$\|\.jpe\?g$\|\.gif$\|\.png$\|\.eot$\|\.ttf$\|\.woff$\|\.woff2$\|\.swf$\|\.otf$'
-\ }
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_max_files = 50000
-let g:ctrlp_max_depth = 40
-let g:ctrlp_match_window = 'max:20'
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>l :CtrlPLine<CR>
+"let g:ctrlp_working_path_mode = 'rwa'
+"let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_custom_ignore = {
+    "\ 'dir': '\.git$\|\.hg$\|\.svn$\|node_modules$\|bower_components$',
+    "\ 'file': '\.so$\|\.pyc$\|\.jpe\?g$\|\.gif$\|\.png$\|\.eot$\|\.ttf$\|\.woff$\|\.woff2$\|\.swf$\|\.otf$'
+"\ }
+"let g:ctrlp_map = '<leader>t'
+"let g:ctrlp_max_files = 50000
+"let g:ctrlp_max_depth = 40
+"let g:ctrlp_match_window = 'max:20'
+"nnoremap <leader>b :CtrlPBuffer<CR>
+"nnoremap <leader>l :CtrlPLine<CR>
 
 " -----------------------------
 " Plugin: Tabular
@@ -422,7 +430,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \}
 let g:ale_fixers = {
-\   'python': ['black', 'isort'],
+\   'python': ['isort', 'black'],
 \}
 nnoremap <leader>af :ALEFix<CR>
 

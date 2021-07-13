@@ -31,6 +31,7 @@ eval "$(pyenv virtualenv-init -)"
 
 #pyenv virtualenvwrapper_laz
 
+
 # Virtualenv
 # ==========
 
@@ -40,10 +41,18 @@ eval "$(pyenv virtualenv-init -)"
 
 # source ${VIRTUALENVWRAPPER_SCRIPT:-`which virtualenvwrapper.sh`}
 
+
 # Direnv
 # ======
 
 eval "$(direnv hook zsh)"
+
+
+# fzf
+# ===
+
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 
 # Utilities
 # =========
