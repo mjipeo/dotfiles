@@ -1,3 +1,5 @@
+[ -f "$HOME/.zshrc.pre" ] && source ~/.zshrc.pre
+
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 
@@ -15,4 +17,4 @@ DEFAULT_USER=`whoami`
 plugins=(git python virtualenv vi-mode tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
-[ -f "$HOME/.zshrc.local" ] && source ~/.zshrc.local
+[ -f "$HOME/.zshrc.post" ] && source ~/.zshrc.post

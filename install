@@ -7,14 +7,21 @@ cd ~
 
 # Install related packages
 brew install git
-brew install the_silver_searcher
-brew install ctags-exuberant
+#brew install the_silver_searcher
+brew install ripgrep
+#brew install ctags-exuberant
 brew install direnv
+#
+brew install fzf
+brew install fd
+#
+brew install tmux
+brew install tmuxinator
 
 # Install Python packages
-sudo easy_install pip
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper --ignore-installed
+#sudo easy_install pip
+#sudo pip install virtualenv
+#sudo pip install virtualenvwrapper --ignore-installed
 
 # Install Oh My Zsh
 if [ -d ".oh-my-zsh" ]; then
