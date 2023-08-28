@@ -183,6 +183,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'rstacruz/sparkup'
 "Plugin 'rking/ag.vim'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'justinmk/vim-sneak'
 Plugin 'majutsushi/tagbar'
@@ -191,6 +192,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sjl/gundo.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'github/copilot.vim'
 
 " Linting
 Plugin 'dense-analysis/ale'
@@ -243,10 +245,9 @@ filetype plugin indent on
 " =============================
 
 " -----------------------------
-" Plugin: Ag
+" Plugin: Rg
 " -----------------------------
-nnoremap <leader>aa :Ag 
-nnoremap <leader>as :Ag <cword><CR>
+nnoremap <leader>r :Rg 
 
 " -----------------------------
 " Plugin: Markdown
@@ -280,7 +281,7 @@ let g:airline_powerline_fonts=1
 " -----------------------------
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '__pycache__', '\.pytest_cache']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$', '\.hg', '\.svn', '\.bzr', '__pycache__', '\.pytest_cache']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
@@ -303,7 +304,7 @@ nnoremap <silent> <leader>gf :Git diff<CR>
 nnoremap <silent> <leader>gl :Git pull<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gs :Git<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 
 " -----------------------------
@@ -402,7 +403,6 @@ let g:pymode_options_max_line_length = 88
 " -----------------------------
 nnoremap <leader>u :GundoToggle<CR>
 
-
 " -----------------------------
 " Plugin: Solarized
 " -----------------------------
@@ -416,12 +416,10 @@ if has("gui_running")
     set guifont=Liberation\ Mono\ for\ Powerline:h14
 endif
 
-
 " -----------------------------
 " Plugin: JSX
 " -----------------------------
 let g:jsx_ext_required = 0
-
 
 " -----------------------------
 " Plugin: ALE
@@ -434,6 +432,11 @@ let g:ale_fixers = {
 \}
 nnoremap <leader>af :ALEFix<CR>
 
+" -----------------------------
+" Plugin: Copilot
+" -----------------------------
+inoremap <C-]> <Plug>(copilot-next)
+inoremap <C-[> <Plug>(copilot-previous)
 
 " ==============
 " Initialization
